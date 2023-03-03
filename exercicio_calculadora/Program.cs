@@ -1,34 +1,60 @@
-﻿internal class Program
+﻿using System.ComponentModel.Design;
+
+
+double num1, num2;
+int op = 0;
+
+void Menu()
 {
-    private static void Main(string[] args)
+    Console.Clear();
+    Console.WriteLine("1- Somar\n2- Subtrair\n3- Multiplica\n4- Dividir\n5- Sair");
+    Console.WriteLine("Escolha uma 0pção");
+    op= int.Parse(Console.ReadLine());
+
+    switch (op)
     {
-        //exercicio calculadora simples
+        case 1:
+            Console.WriteLine("soma: "+(num1+num2));
+            Console.ReadLine();
+            break;
 
-        double n1, n2, conta;
+        case 2:
+            Console.WriteLine("subtração: " + (num1 - num2));
+            Console.ReadLine();
+            break;
 
-        Console.WriteLine("Digite o primeiro numero: ");
-        n1 = double.Parse(Console.ReadLine());
+        case 3:
+            Console.WriteLine("multiplicação: " + num1 * num2);
+            Console.ReadLine();
+            break;
 
-        Console.WriteLine("Digite o segundo numero: ");
-        n2 = double.Parse(Console.ReadLine());
+        case 4:
+            Console.WriteLine("divisao: " + (float) num1 / num2);
+            Console.ReadLine();
+            break;
 
-        conta = n1 + n2;
-        Console.WriteLine("soma: " + conta);
+        case 5:
+            Console.WriteLine("vlw flw");
+            Console.ReadLine();
+            break;
 
-        conta = n1 - n2;
-        Console.WriteLine("Subtracao: " + conta);
-
-        conta = n1 * n2;
-        Console.WriteLine("multiplicacao: " + conta);
-
-        if (n2 == 0)
-        {
-            Console.WriteLine("impossivel dividir");
-        }
-        else
-        {
-            conta = n1 / n2;
-            Console.WriteLine("divisao: " + conta);
-        }
+        default:
+            Console.WriteLine("Opção invalida!!");
+            Console.ReadLine();
+        break;
     }
 }
+
+Console.WriteLine("Informe o primeiro numero: ");
+num1 = double.Parse(Console.ReadLine());
+
+Console.WriteLine("Informe o segundo numero: ");
+num2 = double.Parse(Console.ReadLine());
+
+while (op != 5)
+{
+    Menu();
+
+
+}
+
