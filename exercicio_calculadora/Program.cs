@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.Design;
-
+﻿
 
 double num1, num2;
 int op = 0;
@@ -31,8 +30,16 @@ void escolha() {
             break;
 
         case 4:
-            Console.WriteLine("divisao: " + divisao());
-            Console.ReadLine();
+            if(num2 != 0)
+            {
+                Console.WriteLine("divisao: " + divisao());
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("impossivel dividir ");
+                Console.ReadLine();
+            }
             break;
 
         case 5:
@@ -49,30 +56,24 @@ void escolha() {
 
 double soma()
 {
-    double soma;
-    soma = num1 + num2;
-    return soma;
+    return num1 + num2;
 }
 
 double subtracao()
 {
-    double sub;
-    sub = num1 - num2;
-    return sub;
+    return num1 - num2;
 }
 
 double divisao()
 {
-    double div;
-    div = num1 + num2;
-    return div;
+    return num1 / num2;
+    
 }
 
 double multiplicacao()
 {
-    double mult;
-    mult = num1 + num2;
-    return mult;
+    return num1 * num2;
+
 }
 
 Console.WriteLine("Informe o primeiro numero: ");
